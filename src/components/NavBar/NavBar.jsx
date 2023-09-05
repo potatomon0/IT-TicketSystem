@@ -17,10 +17,10 @@ export default function NavBar({user,setUser}) {//destructure
             <Link to="" onClick={handleLogout}>Log Out</Link>
             &nbsp; | &nbsp; 
             {/* in react, <a> tag causes page refresh so we use Link instead which  */}
-            <Link to='/orders'>Ticket History</Link>
+            <Link to='/user/tickethistory'>Ticket History</Link>
             {/* create a new space that will not be removed by word wrap or other element */}
             &nbsp; | &nbsp; 
-            <Link to="/orders/new">New Ticket</Link>
+            <Link to="/user/create-ticket">New Ticket</Link>
             
         </nav>
     )

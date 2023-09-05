@@ -4,6 +4,8 @@
 const User = require('../../models/User')//get schema
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+// const {check, validationResult} = require('express-validator')
+
 
 const create = async (req, res) => {
     // res.json({

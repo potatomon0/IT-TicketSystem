@@ -6,7 +6,6 @@ import AuthPage from './pages/AuthPage/AuthPage'
 import NewTicketPage from './pages/NewTicketPage/NewTicketPage'
 import TicketHistoryPage from './pages/TicketHistoryPage/TicketHistoryPage'
 import NavBar from './components/NavBar/NavBar'
-import LoginForm from './components/LoginForm/LoginForm'
 
 
 function App() {
@@ -20,8 +19,8 @@ function App() {
         <>
         <NavBar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/orders/new" element={<NewTicketPage />} />
-            <Route path="/orders" element={<TicketHistoryPage />} />
+            <Route path="/user/create-ticket" element={<NewTicketPage />} />
+            <Route path="/user/tickethistory" element={<TicketHistoryPage />} />
           </Routes>
         </> : <AuthPage setUser={setUser} user={user}/>}
     </main>
