@@ -10,7 +10,7 @@ export default function TicketHistory({tickets}) {
     })
 
         return (
-            <main>
+            <main className={`${styles.TicketHistoryMain}`}>
                 {ticketItems.length ?
                     ticketItems
                     :

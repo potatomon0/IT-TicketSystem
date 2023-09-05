@@ -21,9 +21,10 @@ const create = async(req,res)=>{
 // }
 const getUserTickets = async(req,res)=>{
     try{
-        console.log('grabbing usr ticket',req.user)
         const tickets = await Ticket.find({userID:req.user._id})
-        res.status(200).json(tickets)
+        // res.status(200).json(tickets)
+        // res.redirect(200,'/user/tickethistory').json(tickets)
+        res.redirect('/user/tickethistory')
     }catch(err){
         res.status(400).json({ msg: err.message });
     }
