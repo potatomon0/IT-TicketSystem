@@ -1,5 +1,5 @@
 import TicketListItem from '../TicketListItem/TicketListItem'
-
+import styles from './TicketHistory.module.css'
 
 export default function TicketHistory({tickets}) {
     const ticketItems = tickets.map(ticket=>{
