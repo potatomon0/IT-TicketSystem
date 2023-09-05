@@ -14,13 +14,14 @@ export async function createTicket(ticketData) {
     }
 }
 
-export async function getTicket(){
-    console.log('first')
-    // return sendRequest(ticketURL)
-    const res = await axios.get(ticketURL);
-    let info = await res.data
-    // res.ok will be false if the status code set to 4xx in the controller action
-    // if (res.ok) return res
-    // throw new Error('Bad Request');
-    console.log(info)
-}
+// export async function getTicket(){
+//     console.log('first')
+//     // return sendRequest(ticketURL)
+//     const res = await axios.get(ticketURL);
+//     let info = await res.data
+//     console.log(info)
+//     // res.ok will be false if the status code set to 4xx in the controller action
+//     // if (res.ok) return info
+//     // throw new Error('Bad Request');
+//     return info
+// }

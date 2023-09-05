@@ -9,5 +9,4 @@ console.log('routes')
 // router.get('/tickets/:id',ticketCtrl.show)
 
 
-
 module.exports = router

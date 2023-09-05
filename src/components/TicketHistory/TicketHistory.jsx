@@ -1,16 +1,15 @@
 import TicketListItem from '../TicketListItem/TicketListItem'
+import {useState} from 'react';
 
-export default function TicketHistory({tickets, selectTicket, handleSelectTicket}) {
+
+export default function TicketHistory({tickets}) {
     const ticketItems = tickets.map(t=>
         <TicketListItem ticket={t}
-        isSelected={t===selectTicket}
-        handleSelectTicket={handleSelectTicket} 
-        key={t._id}
         />)
 
         return (
             <main>
-                {console.log(ticketItems)}
+                {/* {console.log(ticketItems)} */}
                 {ticketItems.length ?
                     ticketItems
                     :

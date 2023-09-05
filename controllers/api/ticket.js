@@ -1,5 +1,5 @@
 const Ticket = require('../../models/Ticket')
-console.log('cotnrollers')
+
 const create = async(req,res)=>{
     try{
         const ticket = await Ticket.create(req.body)
@@ -12,7 +12,7 @@ const create = async(req,res)=>{
 const index = async(req,res)=>{
     console.log('index')
     try{
-        const tickets = await Ticket.find({userID:user._id}).exec()
+        const tickets = await Ticket.find({}).exec()//how to pass user state into backend?
         // tickets.sort((a,b)=> a.ticketTitle.sortOrder - b.ticketTitle.sortOrder)
         res.status(200).json(tickets);
     }catch(err){
