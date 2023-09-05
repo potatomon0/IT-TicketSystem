@@ -12,7 +12,7 @@ const create = async(req,res)=>{
 const index = async(req,res)=>{
     console.log('index')
     try{
-        const tickets = await Ticket.find({}).exec()
+        const tickets = await Ticket.find({userID:user._id}).exec()
         // tickets.sort((a,b)=> a.ticketTitle.sortOrder - b.ticketTitle.sortOrder)
         res.status(200).json(tickets);
     }catch(err){

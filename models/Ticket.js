@@ -19,7 +19,7 @@ const ticketSchema = new Schema(
             type:String,
             required:true,
         },
-        user:{
+        userID:{
             type:String
         }
     }

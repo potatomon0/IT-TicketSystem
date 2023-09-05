@@ -1,11 +1,11 @@
 import TicketForm from '../../components/TicketForm/TicketForm'
 
-export default function NewTicketPage() {
+export default function NewTicketPage({user}) {
   return (
     <div>
       <h1>NewTicketPage</h1>
 
-      <TicketForm />
+      <TicketForm user={user}/>
     </div>
   )
 }

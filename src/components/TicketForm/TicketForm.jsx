@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import * as ticketAPI from '../../utilities/tickets-api'
 
-export default function TicketForm() {
+export default function TicketForm({user}) {
     const [ticketData, setTicketData] = useState({
         name:'',
         ticketTitle:'',
@@ -20,10 +20,11 @@ export default function TicketForm() {
         e.preventDefault()
         try{
             const newTicket = {...ticketData}
+            console.log(newTicket)
+            newTicket.userID = user._id
             delete newTicket.error
-            console.log('handleSubmit')
+            console.log(newTicket)
             const ticket = await ticketAPI.createTicket(newTicket)//here
-            console.log('created')
             setTicketData(ticket)
         }catch(err){
             setTicketData({...ticketData, error:'Failed to create new ticket. Please try again.'})
