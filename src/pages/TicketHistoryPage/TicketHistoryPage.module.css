@@ -1,0 +1,19 @@
+html,body{
+    height:90%;
+    width:100%;
+}
+
+.TicketHistoryMain{
+    display:flex;
+    justify-content: space-around;
+    border:solid red;
+    height:500px;
+}
+.TicketHistoryComponent{
+    border:solid blue;
+    width:50%;
+}
+.TicketDetailComponent{
+    border:solid blue;
+    width:50%
+}

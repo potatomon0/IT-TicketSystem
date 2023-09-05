@@ -9,17 +9,25 @@ const create = async(req,res)=>{
         res.status(400).json(err)
     }
 }
-const index = async(req,res)=>{
-    console.log('index')
+// const index = async(req,res)=>{
+//     console.log('index')
+//     try{
+//         const tickets = await Ticket.find({})//how to pass user state into backend?
+//         // tickets.sort((a,b)=> a.ticketTitle.sortOrder - b.ticketTitle.sortOrder)
+//         res.status(200).json(tickets);
+//     }catch(err){
+//         res.status(400).json({ msg: err.message });
+//     }
+// }
+const getUserTickets = async(req,res)=>{
     try{
-        const tickets = await Ticket.find({}).exec()//how to pass user state into backend?
-        // tickets.sort((a,b)=> a.ticketTitle.sortOrder - b.ticketTitle.sortOrder)
-        res.status(200).json(tickets);
+        console.log('grabbing usr ticket',req.user)
+        const tickets = await Ticket.find({userID:req.user._id})
+        res.status(200).json(tickets)
     }catch(err){
         res.status(400).json({ msg: err.message });
     }
 }
-
 // async function show(req, res) {
 //     try {
 //         //findById the user's id
@@ -30,4 +38,4 @@ const index = async(req,res)=>{
 //     }
 // }
 
-module.exports = {create, index}
+module.exports = {create,getUserTickets}

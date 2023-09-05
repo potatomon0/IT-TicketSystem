@@ -20,7 +20,7 @@ function App() {
         <NavBar user={user} setUser={setUser}/>
           <Routes>
             <Route path="/user/create-ticket" element={<NewTicketPage user={user}/>} />
-            <Route path="/user/tickethistory" element={<TicketHistoryPage />} />
+            <Route path="/user/tickethistory" element={<TicketHistoryPage user={user}/>} />
           </Routes>
         </> : <AuthPage setUser={setUser} user={user}/>}
     </main>

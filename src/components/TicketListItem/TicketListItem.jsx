@@ -7,7 +7,6 @@ export default function TicketListItem({ticket}) {
     {console.log(currentTicket)}
     return (
         <div onClick={() => setCurrentTicket(ticket)}>
-            
             <div>{ticket.ticketTitle}</div>
         </div>
     );

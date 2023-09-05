@@ -48,8 +48,9 @@ export function getUser() {
 export function logOut() {
     localStorage.removeItem('token')
 }
+
 export async function login(credentials) {//we need async to communicate with our backend
-    console.log(credentials)
+    console.log('users-service',credentials)
     const token = await usersAPI.login(credentials)
     localStorage.setItem('token', token)//setter function, getter function
     return getUser()
