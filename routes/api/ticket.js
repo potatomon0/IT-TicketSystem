@@ -7,7 +7,7 @@ const ticketCtrl = require('../../controllers/api/ticket')
 //Index New Delete Update Create Edit Show
 router.get('/tickets',ticketCtrl.getUserTickets)
 router.post('/tickets', ticketCtrl.create)
-console.log('routes')
+router.delete('/tickets/:id',ticketCtrl.deleteTicket)
 
 // router.get('/tickets/:id',ticketCtrl.show)
 

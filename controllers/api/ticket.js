@@ -3,28 +3,20 @@ const Ticket = require('../../models/Ticket')
 const create = async(req,res)=>{
     try{
         const ticket = await Ticket.create(req.body)
-        console.log(ticket)
+        // await Ticket.create(req.body)
         res.json(ticket)
+        // .then(res.redirect('/'))
     }catch(err){
         res.status(400).json(err)
     }
+    
 }
-// const index = async(req,res)=>{
-//     console.log('index')
-//     try{
-//         const tickets = await Ticket.find({})//how to pass user state into backend?
-//         // tickets.sort((a,b)=> a.ticketTitle.sortOrder - b.ticketTitle.sortOrder)
-//         res.status(200).json(tickets);
-//     }catch(err){
-//         res.status(400).json({ msg: err.message });
-//     }
-// }
+
 const getUserTickets = async(req,res)=>{
     try{
         const tickets = await Ticket.find({userID:req.user._id})
-        // res.status(200).json(tickets)
+        res.status(200).json(tickets)
         // res.redirect(200,'/user/tickethistory').json(tickets)
-        res.redirect('/user/tickethistory')
     }catch(err){
         res.status(400).json({ msg: err.message });
     }
@@ -38,5 +30,12 @@ const getUserTickets = async(req,res)=>{
 //         res.status(400).json({ msg: err.message });
 //     }
 // }
+const deleteTicket=async(req,res)=>{
+    try{
+        Ticket.findByIdAndDelete(req.params.id)
+    }catch(err){
+        res.status(400).json({ msg: err.message });
+    }
+}
 
-module.exports = {create,getUserTickets}
+module.exports = {create,getUserTickets,deleteTicket}

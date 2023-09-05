@@ -2,13 +2,14 @@ import TicketListItem from '../TicketListItem/TicketListItem'
 import styles from './TicketHistory.module.css'
 
 export default function TicketHistory({tickets}) {
-    const ticketItems = tickets.map(ticket=>{
+    const ticketItems = tickets.map((ticket,i)=>{
         return <TicketListItem 
         ticket={ticket}
-        key={ticket._id}
+        key={i}
+        param={ticket._id}
         />
     })
-
+//key={ticket._id}
         return (
             <main className={`${styles.TicketHistoryMain}`}>
                 {ticketItems.length ?

@@ -13,13 +13,16 @@ export default function TicketHistoryPage({ user }) {
         const ticketList = await ticketsAPI.getTickets()
         setTickets(ticketList)
     }
+    const deleteTicket = async()=>{
+        await ticketsAPI.deleteTickets()
+    }
     useEffect(() => {
         getTicketList()
     }, [])
     return (
         <div className={`${styles.TicketHistoryMain}`}>
             <div className={`${styles.TicketHistoryComponent}`}>
-                <TicketHistory tickets={tickets} user={user} />
+                <TicketHistory tickets={tickets}/>
             </div>
             <div className={`${styles.TicketDetailComponent}`}>
                 <TicketDetail user={user} />

@@ -27,3 +27,6 @@ export async function getTickets(){
     // // throw new Error('Bad Request');
     // return info
 }
+export async function deleteTickets(){
+    return sendRequest(`${ticketURL}/:id?_method=DELETE`)
+}
