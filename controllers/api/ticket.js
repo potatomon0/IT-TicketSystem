@@ -21,15 +21,7 @@ const getUserTickets = async(req,res)=>{
         res.status(400).json({ msg: err.message });
     }
 }
-// async function show(req, res) {
-//     try {
-//         //findById the user's id
-//         const ticket = await Ticket.findById(req.params.id);
-//         res.status(200).json(ticket);
-//     } catch (err) {
-//         res.status(400).json({ msg: err.message });
-//     }
-// }
+
 const deleteTicket=async(req,res)=>{
     try{
         await Ticket.findByIdAndRemove(req.params.id)
@@ -38,7 +30,6 @@ const deleteTicket=async(req,res)=>{
         res.status(400).json({ msg: err.message });
     }
 }
-
 
 const updateTicket = async(req,res)=>{
     try{
