@@ -33,26 +33,21 @@ const getUserTickets = async(req,res)=>{
 const deleteTicket=async(req,res)=>{
     try{
         await Ticket.findByIdAndDelete(req.params.id)
+        res.send('ticketDeleted')
     }catch(err){
         res.status(400).json({ msg: err.message });
     }
 }
 
-const editTicket=async(req,res)=>{
-    try{
-        const ticket = await Ticket.findById(req.params.id)
-        res.json(ticket)
-    }catch(err){
-        res.status(400).json({ msg: err.message });
-    }
-}
 
 const updateTicket = async(req,res)=>{
     try{
-        Ticket.findByIdAndUpdate(req.params.id, req.body).then(res.redirect('/api/user/tickets'))
-    }catch(err){
+        const editTicket = await Ticket.findByIdAndUpdate(req.params.id, req.body)
+        res.json(editTicket)
 
+    }catch(err){
+        res.status(400).json({ msg: err.message });
     }
 }
 
-module.exports = {create,getUserTickets,deleteTicket,editTicket,updateTicket}
+module.exports = {create,getUserTickets,deleteTicket,updateTicket}

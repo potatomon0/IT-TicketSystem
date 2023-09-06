@@ -9,7 +9,8 @@ export default function TicketDetail() {
     const { currentTicket } = useContext(AppContext)
     return (
         <div className={`${styles.TicketDetailMain}`}>
-            <Link ><EditTicket ticketData={currentTicket}/></Link>
+            {/* <Link to='/user/edit-Ticket' ticketData={currentTicket}>Edit</Link> */}
+            {/* {currentTicket ? <EditTicket /> : ""} */}
             <div>{currentTicket.email}</div>
             <div>{currentTicket.name}</div>
             <div>{currentTicket.details}</div>

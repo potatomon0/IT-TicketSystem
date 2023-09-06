@@ -2,6 +2,7 @@ import { useState } from 'react'
 import * as ticketAPI from '../../utilities/tickets-api'
 
 export default function TicketForm({ticketData}) {
+    console.log('editTicket',ticketData)
     const [editTicketData, setEditTicketData] = useState({
         name:'',
         ticketTitle:'',
@@ -19,9 +20,9 @@ export default function TicketForm({ticketData}) {
         // console.log('handleSubmit')
         e.preventDefault()
         try{
-            const newTicket = {...editTicketData}
-            delete newTicket.error
-            const ticket = await ticketAPI.editTicket('PUT',newTicket)//here
+            const editedTicket = {...editTicketData}
+            delete editedTicket.error
+            const ticket = await ticketAPI.editTicket('PUT',editedTicket)//here
             setEditTicketData(ticket)
         }catch(err){
             setEditTicketData({...editTicketData, error:'Failed to edit ticket. Please try again.'})
