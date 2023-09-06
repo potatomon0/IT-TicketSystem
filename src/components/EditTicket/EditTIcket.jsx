@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import * as ticketAPI from '../../utilities/tickets-api'
 
-export default function TicketForm() {
-    const [ticketData, setTicketData] = useState({
+export default function TicketForm({ticketData}) {
+    const [editTicketData, setEditTicketData] = useState({
         name:'',
         ticketTitle:'',
         email:'',
@@ -10,8 +10,8 @@ export default function TicketForm() {
         error:''
     })
     const handleChange=(e)=>{
-        setTicketData({
-            ...ticketData,
+        setEditTicketData({
+            ...editTicketData,
             [e.target.name]:e.target.value,
         })
     }
@@ -19,32 +19,29 @@ export default function TicketForm() {
         // console.log('handleSubmit')
         e.preventDefault()
         try{
-            const newTicket = {...ticketData}
-            console.log(newTicket)
-            newTicket.userID = user._id
+            const newTicket = {...editTicketData}
             delete newTicket.error
-            console.log(newTicket)
-            const ticket = await ticketAPI.createTicket(newTicket)//here
-            setTicketData(ticket)
+            const ticket = await ticketAPI.editTicket('PUT',newTicket)//here
+            setEditTicketData(ticket)
         }catch(err){
-            setTicketData({...ticketData, error:'Failed to create new ticket. Please try again.'})
+            setEditTicketData({...editTicketData, error:'Failed to edit ticket. Please try again.'})
         }
     }
     return(
         <>
-        <div className="ticketForm">
+        <div className="editTicketForm">
             <form onSubmit={handleSubmit}>
                 <label>Name</label>
-                <input type="text" name='name' value={ticketData.name} onChange={handleChange} required/>
+                <input type="text" name='name' value={editTicketData.name} onChange={handleChange} defaultValue={ticketData.name}/>
                 <label>Ticket Title</label>
-                <input type="text" name='ticketTitle' value={ticketData.ticketTitle} onChange={handleChange} required/>
+                <input type="text" name='ticketTitle' value={editTicketData.ticketTitle} onChange={handleChange} defaultValue={ticketData.ticketTitle}/>
                 <label>Email</label>
-                <input type="text" name='email' value={ticketData.email} onChange={handleChange} required/>
+                <input type="text" name='email' value={editTicketData.email} onChange={handleChange} defaultValue={ticketData.email} />
                 <label>Details</label>
-                <input type="text" name='details' value={ticketData.details} onChange={handleChange} required/>
-                <button type="submit">Submit Ticket</button>
+                <input type="text" name='details' value={editTicketData.details} onChange={handleChange} defaultValue={ticketData.details}/>
+                <button type="submit">Save Changes</button>
             </form>
-            <p className="error-message">&nbsp;{ticketData.error}</p>
+            <p className="error-message">&nbsp;{editTicketData.error}</p>
         </div>
         </>
     )

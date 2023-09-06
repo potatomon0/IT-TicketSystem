@@ -27,6 +27,9 @@ export async function getTickets(){
     // // throw new Error('Bad Request');
     // return info
 }
-export async function deleteTickets(){
-    return sendRequest(`${ticketURL}/:id`,'POST')
+export async function deleteTickets(method){
+    return sendRequest(`${ticketURL}/:id`,method)
+}
+export async function editTicket(method,editTicketData){
+    return sendRequest(`${ticketURL}/:id`,method, editTicketData)
 }
