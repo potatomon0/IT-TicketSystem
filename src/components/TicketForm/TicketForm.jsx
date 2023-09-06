@@ -46,5 +46,4 @@ export default function TicketForm({user}) {
         </div>
         </>
     )
-
 }

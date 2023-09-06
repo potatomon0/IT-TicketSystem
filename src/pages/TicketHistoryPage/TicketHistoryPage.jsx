@@ -1,5 +1,5 @@
 // import { checkToken } from '../../utilities/users-service'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 // import * as ticketsAPI from '../../utilities/tickets-api'
 import TicketHistory from '../../components/TicketHistory/TicketHistory'
 import TicketDetail from '../../components/TicketDetail/TicketDetail'
