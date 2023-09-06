@@ -6,7 +6,7 @@ import AuthPage from './pages/AuthPage/AuthPage'
 import NewTicketPage from './pages/NewTicketPage/NewTicketPage'
 import TicketHistoryPage from './pages/TicketHistoryPage/TicketHistoryPage'
 import NavBar from './components/NavBar/NavBar'
-import EditTicket from './components/EditTicket/EditTicket'
+import EditTicket from '../src/components/EditTicket/EditTicket'
 import {AppContext} from './contexts/context'
 
 
