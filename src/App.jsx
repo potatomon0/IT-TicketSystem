@@ -6,7 +6,8 @@ import AuthPage from './pages/AuthPage/AuthPage'
 import NewTicketPage from './pages/NewTicketPage/NewTicketPage'
 import TicketHistoryPage from './pages/TicketHistoryPage/TicketHistoryPage'
 import NavBar from './components/NavBar/NavBar'
-import EditTicket from '../src/components/EditTicket/EditTicket'
+// import EditTicket from '../src/components/EditTicket/EditTicket'
+import Edit from './components/Edit/Edit'
 import {AppContext} from './contexts/context'
 
 
@@ -23,7 +24,8 @@ function App() {
           <Routes>
             <Route path="/user/create-ticket" element={<NewTicketPage user={user} />} />
             <Route path="/user/tickethistory" element={<TicketHistoryPage />} />
-            <Route path="/user/edit-Ticket" element={<EditTicket />} />
+            {/* <Route path="/user/edit-Ticket" element={<EditTicket />} /> */}
+            <Route path="/user/edit-ticket" element={<Edit />} />
           </Routes>
         </> : <AuthPage setUser={setUser} user={user}/>}
     </main>

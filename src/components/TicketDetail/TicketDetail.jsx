@@ -11,7 +11,7 @@ export default function TicketDetail() {
             <div className={`${styles.TicketDetailEmail}`}>{currentTicket.email}</div>
             <div>{currentTicket.name}</div>
             <div>{currentTicket.details}</div>
-            {isSelected ? <Link to='/user/edit-Ticket'>Edit</Link> : null}
+            {isSelected ? <Link to='/user/edit-ticket'>Edit</Link> : null}
         </div>
     )
 }
