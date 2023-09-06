@@ -28,5 +28,5 @@ export async function getTickets(){
     // return info
 }
 export async function deleteTickets(){
-    return sendRequest(`${ticketURL}/:id?_method=DELETE`)
+    return sendRequest(`${ticketURL}/:id`,'POST')
 }

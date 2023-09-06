@@ -1,6 +1,7 @@
 import { AppContext } from '../../contexts/context'
 import { useContext } from 'react';
 import styles from './TicketDetails.module.css'
+// import * as ticketsAPI from '../../utilities/tickets-api'
 
 export default function TicketDetail() {
     const { currentTicket } = useContext(AppContext)
