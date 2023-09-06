@@ -32,10 +32,19 @@ const getUserTickets = async(req,res)=>{
 // }
 const deleteTicket=async(req,res)=>{
     try{
-        Ticket.findByIdAndDelete(req.params.id)
+        await Ticket.findByIdAndDelete(req.params.id)
     }catch(err){
         res.status(400).json({ msg: err.message });
     }
 }
 
-module.exports = {create,getUserTickets,deleteTicket}
+const editTicket=async(req,res)=>{
+    try{
+        const ticket = await Ticket.findById(req.params.id)
+        res.json(ticket)
+    }catch(err){
+        res.status(400).json({ msg: err.message });
+    }
+}
+
+module.exports = {create,getUserTickets,deleteTicket,editTicket}
