@@ -49,10 +49,10 @@ const editTicket=async(req,res)=>{
 
 const updateTicket = async(req,res)=>{
     try{
-        
+        Ticket.findByIdAndUpdate(req.params.id, req.body).then(res.redirect('/api/user/tickets'))
     }catch(err){
 
     }
 }
 
-module.exports = {create,getUserTickets,deleteTicket,editTicket}
+module.exports = {create,getUserTickets,deleteTicket,editTicket,updateTicket}
