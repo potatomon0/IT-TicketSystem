@@ -1,12 +1,13 @@
 import TicketListItem from '../TicketListItem/TicketListItem'
 import styles from './TicketHistory.module.css'
 
-export default function TicketHistory({tickets}) {
+export default function TicketHistory({tickets, setCount}) {
     const ticketItems = tickets.map((ticket,i)=>{
         return <TicketListItem 
         ticket={ticket}
         key={i}
         param={ticket._id}
+        setCount={setCount}
         />
     })
 //key={ticket._id}

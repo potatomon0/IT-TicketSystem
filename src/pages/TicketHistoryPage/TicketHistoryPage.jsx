@@ -8,6 +8,7 @@ import styles from './TicketHistoryPage.module.css'
 
 
 export default function TicketHistoryPage({ user }) {
+    const [count,setCount] = useState(0)
     const [tickets, setTickets] = useState([])
     const getTicketList = async () => {
         const ticketList = await ticketsAPI.getTickets()
@@ -18,11 +19,11 @@ export default function TicketHistoryPage({ user }) {
     // }
     useEffect(() => {
         getTicketList()
-    }, [])
+    }, [count])
     return (
         <div className={`${styles.TicketHistoryMain}`}>
             <div className={`${styles.TicketHistoryComponent}`}>
-                <TicketHistory tickets={tickets}/>
+                <TicketHistory tickets={tickets} setCount={setCount}/>
             </div>
             <div className={`${styles.TicketDetailComponent}`}>
                 <TicketDetail user={user} />

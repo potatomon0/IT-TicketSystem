@@ -29,8 +29,10 @@ export async function getTickets(){
 }
 
 export async function deleteTickets(currentTicket){
-    console.log('delete ticket',currentTicket)
-    return sendRequest(`${ticketURL}/${currentTicket._id}`,'DELETE')
+    // console.log('delete ticket',currentTicket)
+    const res = await axios.delete(`/api/user/tickets/${currentTicket}`)
+    return res
+    // return sendRequest(`${ticketURL}/${currentTicket}`,'DELETE')
 }
 
 export async function editTicket(editedTicket){

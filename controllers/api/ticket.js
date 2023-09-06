@@ -32,8 +32,8 @@ const getUserTickets = async(req,res)=>{
 // }
 const deleteTicket=async(req,res)=>{
     try{
-        await Ticket.findByIdAndDelete(req.params.id)
-        res.send('ticketDeleted')
+        await Ticket.findByIdAndRemove(req.params.id)
+        res.send('ticket deleted')
     }catch(err){
         res.status(400).json({ msg: err.message });
     }
