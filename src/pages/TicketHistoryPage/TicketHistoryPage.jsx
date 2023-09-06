@@ -13,9 +13,9 @@ export default function TicketHistoryPage({ user }) {
         const ticketList = await ticketsAPI.getTickets()
         setTickets(ticketList)
     }
-    const deleteTicket = async()=>{
-        await ticketsAPI.deleteTickets()
-    }
+    // const deleteTicket = async()=>{
+    //     await ticketsAPI.deleteTickets()
+    // }
     useEffect(() => {
         getTicketList()
     }, [])

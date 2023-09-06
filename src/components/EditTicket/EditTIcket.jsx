@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import * as ticketAPI from '../../utilities/tickets-api'
 
-export default function TicketForm()) {
+export default function TicketForm() {
     const [ticketData, setTicketData] = useState({
         name:'',
         ticketTitle:'',
