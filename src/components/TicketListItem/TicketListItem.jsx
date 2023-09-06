@@ -13,6 +13,7 @@ export default function TicketListItem({ticket,param,setCount}) {
     })
     const deleteTicket = async(e, id)=>{
         e.preventDefault()
+        setCurrentTicket(null)
         try{
             await ticketAPI.deleteTickets(id)
             setCount(prev => prev+1)
