@@ -3,7 +3,7 @@ import * as ticketAPI from '../../utilities/tickets-api'
 import {AppContext} from '../../contexts/context'
 
 export default function TicketForm() {
-    const {currentTicket,user} = useContext(AppContext)
+    const {currentTicket} = useContext(AppContext)
     console.log('editTicket',currentTicket)
     const [editTicketData, setEditTicketData] = useState({
         _id:currentTicket._id,

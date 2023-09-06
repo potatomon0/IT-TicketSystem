@@ -21,7 +21,6 @@ export default function NavBar({user,setUser}) {//destructure
             {/* create a new space that will not be removed by word wrap or other element */}
             &nbsp; | &nbsp; 
             <Link to="/user/create-ticket">New Ticket</Link>
-            
         </nav>
     )
 }

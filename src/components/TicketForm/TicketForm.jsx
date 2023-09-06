@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import * as ticketAPI from '../../utilities/tickets-api'
+import {useNavigate} from 'react-router-dom'
 
 export default function TicketForm({user}) {
+    let navigate = useNavigate()
+    const ticketHistory = ()=>{
+        let path=`/user/tickethistory`
+        navigate(path)
+    }
     const [ticketData, setTicketData] = useState({
         name:'',
         ticketTitle:'',
@@ -24,6 +30,7 @@ export default function TicketForm({user}) {
             delete newTicket.error
             const ticket = await ticketAPI.createTicket(newTicket)//here
             setTicketData(ticket)
+            ticketHistory()
         }catch(err){
             setTicketData({...ticketData, error:'Failed to create new ticket. Please try again.'})
         }
