@@ -1,7 +1,11 @@
 .TicketListItemMain{
     border:solid green;
     background-color: aliceblue;
-    width:40%;
+    width:90%;
+    height:50px;
+    margin:5px;
     display:flex;
+    align-items:center;
+    justify-content: space-around;
     
 }
