@@ -1,7 +1,8 @@
 // Add the user to the database.
 // Create the JWT. We'll include a userproperty in the JWT's payload containing the user's document data.
 // Send the JWT to the client using res.json()
-const User = require('../../models/User')//get schema
+// const User = require('../../models/User')//get schema
+const User = require('../../models/UserModel')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 // const {check, validationResult} = require('express-validator')
