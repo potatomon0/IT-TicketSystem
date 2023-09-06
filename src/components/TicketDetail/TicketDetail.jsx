@@ -12,7 +12,7 @@ export default function TicketDetail() {
             <div>{currentTicket.email}</div>
             <div>{currentTicket.name}</div>
             <div>{currentTicket.details}</div>
-            {isSelected ? <Link to='/user/edit-Ticket'>Edit</Link> : ''}
+            {isSelected ? <Link to='/user/edit-Ticket'>Edit</Link> : null}
         </div>
     )
 }
