@@ -15,5 +15,8 @@ html,body{
 }
 .TicketDetailComponent{
     border:solid blue;
-    width:50%
+    width:50%;
+    display:flex;
+    padding-top:20px;
+    justify-content: center;
 }
