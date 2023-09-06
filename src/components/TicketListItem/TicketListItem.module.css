@@ -1,4 +1,7 @@
 .TicketListItemMain{
-    border:solid red;
-
+    border:solid green;
+    background-color: aliceblue;
+    width:40%;
+    display:flex;
+    
 }

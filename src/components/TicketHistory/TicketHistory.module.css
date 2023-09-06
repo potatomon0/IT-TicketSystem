@@ -1,4 +1,6 @@
 .TicketHistoryMain{
-    border:solid green;
+    border:solid red;
+    display:flex;
+    flex-direction: column;
     
 }
