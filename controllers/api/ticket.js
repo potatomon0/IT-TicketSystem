@@ -47,4 +47,12 @@ const editTicket=async(req,res)=>{
     }
 }
 
+const updateTicket = async(req,res)=>{
+    try{
+        
+    }catch(err){
+
+    }
+}
+
 module.exports = {create,getUserTickets,deleteTicket,editTicket}
