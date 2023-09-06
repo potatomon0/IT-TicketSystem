@@ -30,7 +30,7 @@ export async function getTickets(){
 
 export async function deleteTickets(currentTicket){
     console.log('delete ticket',currentTicket)
-    return sendRequest(`${ticketURL}/${currentTicket._id}`,'DELETE',{})
+    return sendRequest(`${ticketURL}/${currentTicket._id}`,'DELETE')
 }
 
 export async function editTicket(editedTicket){
