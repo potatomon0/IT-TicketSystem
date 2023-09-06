@@ -2,7 +2,7 @@ import { useState,useContext } from 'react'
 import * as ticketAPI from '../../utilities/tickets-api'
 import {AppContext} from '../../contexts/context'
 
-export default function EditTicket() {
+export default function Edit() {
     const {currentTicket} = useContext(AppContext)
     console.log('editTicket',currentTicket)
     const [editTicketData, setEditTicketData] = useState({
