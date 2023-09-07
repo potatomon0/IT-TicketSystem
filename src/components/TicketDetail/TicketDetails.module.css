@@ -1,5 +1,5 @@
 .TicketDetailMain{
-    border:solid red;
+    /* border:solid red; */
     display:flex;
     flex-direction: column;
     align-items:space-between;
@@ -8,5 +8,5 @@
     height:300px;
 }
 .TicketDetailEmail{
-    border:solid red;
+    /* border:solid red; */
 }

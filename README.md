@@ -32,6 +32,7 @@
 ## Unresolved Problems:
 
 - State of the current ticket selected need to reset after deleting that selected ticket
+- Backend might not be running in deployed site
 - Improve CSS
 
 ## Future Enhancements:

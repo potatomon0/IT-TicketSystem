@@ -6,15 +6,19 @@ html,body{
 .TicketHistoryMain{
     display:flex;
     justify-content: space-around;
-    border:solid red;
+    /* border:solid red; */
     height:500px;
 }
 .TicketHistoryComponent{
-    border:solid blue;
+    margin:40px;
+    border:solid rgb(189, 188, 157);
+    border-radius:3%;
     width:50%;
 }
 .TicketDetailComponent{
-    border:solid blue;
+    border-radius:3%;
+    margin:40px;
+    border:solid rgb(189, 188, 157);
     width:50%;
     display:flex;
     padding-top:20px;
