@@ -29,3 +29,7 @@
 - Project Planning: https://github.com/potatomon0/IT-TicketSystem/tree/master/diagrams
 - Deployed Site: https://it-ticket-system.onrender.com
 
+## Unresolved Problems:
+
+- State of the current ticket selected need to reset after deleting that selected ticket
+
