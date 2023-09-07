@@ -32,4 +32,10 @@
 ## Unresolved Problems:
 
 - State of the current ticket selected need to reset after deleting that selected ticket
+- Improve CSS
 
+## Future Enhancements:
+
+- Add Admin account which can perform ticket deletion
+- Remove delete feature from user acocunt and give 'close ticket' (archiving) option instead
+- 
