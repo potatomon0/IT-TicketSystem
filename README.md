@@ -24,4 +24,8 @@
 5. Others:
     - Dotenv
 
- 
+## Links:
+
+- Project Planning: https://github.com/potatomon0/IT-TicketSystem/tree/master/diagrams
+- Deployed Site: https://it-ticket-system.onrender.com
+
